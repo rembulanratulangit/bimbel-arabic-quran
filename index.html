@@ -1,0 +1,1084 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Life with Quran and Arabic Language | Platform Belajar Bahasa Arab & Al-Qur'an</title>
+    
+    <!-- Google Fonts: Plus Jakarta Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Custom Tailwind Configuration -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        sage: {
+                            50: '#f2f8f5',
+                            100: '#e1f0e8',
+                            200: '#c5e2d3',
+                            500: '#2d6a4f',
+                            700: '#1B4332', // Primary Brand Deep Sage Green
+                            800: '#143427',
+                            900: '#0d231a',
+                        },
+                        mint: '#D8F3DC',   // Soft Mint Accent
+                        cream: '#F8F9FA',  // Neutral Warm Cream
+                        charcoal: '#2B2D42',// Charcoal Text
+                        gold: {
+                            DEFAULT: '#D4AF37', // Metallic Gold Accent
+                            light: '#F3E5AB',
+                            dark: '#AA820A'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                    },
+                    boxShadow: {
+                        'soft-sage': '0 10px 30px -5px rgba(27, 67, 50, 0.12)',
+                        'gold-glow': '0 0 20px rgba(212, 175, 55, 0.3)',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #F8F9FA;
+            color: #2B2D42;
+            overflow-x: hidden;
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #F8F9FA;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #1B4332;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #143427;
+        }
+
+        /* Smooth Glassmorphism Header */
+        .glass-nav {
+            background: rgba(248, 249, 250, 0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(27, 67, 50, 0.08);
+        }
+
+        /* Subtle Pattern Backgrounds */
+        .islamic-pattern-bg {
+            background-color: #1B4332;
+            background-image: radial-gradient(rgba(212, 175, 55, 0.15) 1px, transparent 1px);
+            background-size: 24px 24px;
+        }
+
+        .gold-gradient-text {
+            background: linear-gradient(135deg, #D4AF37 0%, #F3E5AB 50%, #AA820A 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* Card Hover Transformations */
+        .card-hover-lift {
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .card-hover-lift:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 20px 35px -10px rgba(27, 67, 50, 0.15);
+            border-color: rgba(212, 175, 55, 0.5);
+        }
+
+        /* Custom Modal Animations */
+        .modal-backdrop {
+            transition: opacity 0.3s ease;
+        }
+        .modal-content {
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+    </style>
+</head>
+<body class="antialiased selection:bg-mint selection:text-sage-800">
+
+    <!-- Navigation Bar -->
+    <header id="main-header" class="fixed top-0 left-0 right-0 z-40 transition-all duration-300 glass-nav">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <!-- Brand Logo -->
+                <a href="#" class="flex items-center gap-3 group">
+                    <div class="w-10 h-10 rounded-xl bg-sage-700 flex items-center justify-center text-gold shadow-md group-hover:scale-105 transition-transform duration-300">
+                        <!-- Geometric Quran/Arabic Motif SVG Icon -->
+                        <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+                        </svg>
+                    </div>
+                    <div class="flex flex-col">
+                        <span class="font-extrabold text-lg leading-tight tracking-tight text-sage-700">Life with Quran</span>
+                        <span class="text-xs text-gold-dark font-medium tracking-wide">& Arabic Language</span>
+                    </div>
+                </a>
+
+                <!-- Desktop Navigation Links -->
+                <nav class="hidden md:flex items-center space-x-8 font-medium text-sm text-charcoal">
+                    <a href="#programs" class="hover:text-sage-700 transition-colors">Program Studi</a>
+                    <a href="#how-it-works" class="hover:text-sage-700 transition-colors">Metode Belajar</a>
+                    <a href="#schedule" class="hover:text-sage-700 transition-colors">Format Kelas</a>
+                    <a href="#faq" class="hover:text-sage-700 transition-colors">FAQ</a>
+                    <a href="#contact" class="hover:text-sage-700 transition-colors">Kontak</a>
+                </nav>
+
+                <!-- Desktop CTA -->
+                <div class="hidden md:flex items-center space-x-4">
+                    <button onclick="openRegistrationModal()" class="bg-sage-700 hover:bg-sage-800 text-white font-semibold text-sm px-6 py-3 rounded-xl shadow-md hover:shadow-lg transition-all transform hover:-translate-y-0.5 flex items-center gap-2">
+                        <span>Daftar Sekarang</span>
+                        <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                    </button>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="p-2 rounded-lg text-sage-700 hover:bg-mint/50 focus:outline-none" aria-label="Toggle Navigation Menu">
+                        <i data-lucide="menu" class="w-6 h-6"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Drawer Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-cream border-b border-sage-100 px-4 pt-2 pb-6 space-y-3">
+            <a href="#programs" class="block py-2.5 px-3 text-base font-medium text-charcoal hover:bg-sage-50 rounded-lg hover:text-sage-700">Program Studi</a>
+            <a href="#how-it-works" class="block py-2.5 px-3 text-base font-medium text-charcoal hover:bg-sage-50 rounded-lg hover:text-sage-700">Metode Belajar</a>
+            <a href="#schedule" class="block py-2.5 px-3 text-base font-medium text-charcoal hover:bg-sage-50 rounded-lg hover:text-sage-700">Format Kelas</a>
+            <a href="#faq" class="block py-2.5 px-3 text-base font-medium text-charcoal hover:bg-sage-50 rounded-lg hover:text-sage-700">FAQ</a>
+            <a href="#contact" class="block py-2.5 px-3 text-base font-medium text-charcoal hover:bg-sage-50 rounded-lg hover:text-sage-700">Kontak</a>
+            <div class="pt-2">
+                <button onclick="openRegistrationModal(); toggleMobileMenu();" class="w-full bg-sage-700 text-white font-semibold py-3 px-4 rounded-xl text-center shadow-md flex items-center justify-center gap-2">
+                    <span>Daftar Sekarang</span>
+                    <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative pt-32 pb-20 md:pt-40 md:pb-32 overflow-hidden">
+        <!-- Subtle Glow Decorative Background Spheres -->
+        <div class="absolute top-1/4 left-10 w-72 h-72 bg-mint opacity-40 rounded-full blur-3xl -z-10 pointer-events-none"></div>
+        <div class="absolute bottom-10 right-10 w-96 h-96 bg-sage-100 opacity-50 rounded-full blur-3xl -z-10 pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+                
+                <!-- Left Hero Content -->
+                <div class="lg:col-span-7 text-center lg:text-left space-y-6">
+                    <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-sage-50 border border-sage-200 text-sage-700 text-xs sm:text-sm font-semibold shadow-xs">
+                        <span class="flex h-2 w-2 rounded-full bg-gold"></span>
+                        Platform Pendidikan Islam Modern & Terstruktur
+                    </div>
+                    
+                    <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-sage-700 tracking-tight leading-tight">
+                        Master the Language of the Qur'an with <span class="text-transparent bg-clip-text bg-gradient-to-r from-sage-700 via-sage-500 to-gold-dark">Clarity and Depth</span>.
+                    </h1>
+                    
+                    <p class="text-base sm:text-lg text-charcoal/80 font-normal max-w-2xl mx-auto lg:mx-0 leading-relaxed">
+                        Program pembelajaran terpandu, terstruktur, dan terjangkau dalam Bahasa Arab, Tahsin, Tajwid, dan Studi Al-Qur'an untuk seluruh jenjang usia.
+                    </p>
+
+                    <!-- CTAs -->
+                    <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-4">
+                        <a href="#programs" class="w-full sm:w-auto px-8 py-4 bg-sage-700 hover:bg-sage-800 text-white font-bold rounded-xl shadow-lg hover:shadow-xl transition-all text-center flex items-center justify-center gap-2 group">
+                            <span>Jelajahi Program</span>
+                            <i data-lucide="chevron-down" class="w-5 h-5 group-hover:translate-y-0.5 transition-transform"></i>
+                        </a>
+                        <button onclick="openRegistrationModal()" class="w-full sm:w-auto px-8 py-4 bg-white hover:bg-sage-50 text-sage-700 border-2 border-sage-700 font-bold rounded-xl shadow-sm hover:shadow-md transition-all text-center flex items-center justify-center gap-2">
+                            <span>Daftar Kelas</span>
+                            <i data-lucide="sparkles" class="w-5 h-5 text-gold-dark"></i>
+                        </button>
+                    </div>
+
+                    <!-- Trust Indicators -->
+                    <div class="pt-6 border-t border-sage-100 flex items-center justify-center lg:justify-start gap-8 text-xs sm:text-sm font-medium text-charcoal/70">
+                        <div class="flex items-center gap-2">
+                            <i data-lucide="check-circle" class="w-4 h-4 text-gold-dark"></i>
+                            <span>100% Pengajar Bersertifikat</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <i data-lucide="check-circle" class="w-4 h-4 text-gold-dark"></i>
+                            <span>Jadwal Fleksibel</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <i data-lucide="check-circle" class="w-4 h-4 text-gold-dark"></i>
+                            <span>Kurikulum Teruji</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Hero Visual / Interactive Preview Card -->
+                <div class="lg:col-span-5 relative">
+                    <!-- Main Card Frame -->
+                    <div class="relative mx-auto max-w-md lg:max-w-none bg-white p-6 sm:p-8 rounded-3xl shadow-soft-sage border border-sage-100">
+                        <!-- Top Card Tag -->
+                        <div class="flex items-center justify-between pb-6 border-b border-gray-100">
+                            <div class="flex items-center gap-3">
+                                <div class="w-12 h-12 rounded-2xl bg-mint flex items-center justify-center text-sage-700">
+                                    <i data-lucide="book-open" class="w-6 h-6"></i>
+                                </div>
+                                <div>
+                                    <h2 class="font-bold text-sage-700 text-base">Kelas Interaktif</h2>
+                                    <p class="text-xs text-charcoal/60">Pengajaran Langsung & Live Mentoring</p>
+                                </div>
+                            </div>
+                            <span class="px-3 py-1 bg-gold/15 text-gold-dark font-bold text-xs rounded-full">Aktif</span>
+                        </div>
+
+                        <!-- Card Content Preview List -->
+                        <div class="py-6 space-y-4">
+                            <div class="p-4 rounded-2xl bg-sage-50/60 border border-sage-100 flex items-center justify-between">
+                                <div class="flex items-center gap-3">
+                                    <div class="w-8 h-8 rounded-lg bg-sage-700 text-white flex items-center justify-center font-bold text-sm">
+                                        1
+                                    </div>
+                                    <div>
+                                        <p class="text-xs font-semibold text-charcoal">Bahasa Arab Nahwu & Shorof</p>
+                                        <p class="text-[11px] text-charcoal/60">Paham Kaidah Tata Bahasa</p>
+                                    </div>
+                                </div>
+                                <span class="text-xs font-bold text-sage-700">Level 1 - 3</span>
+                            </div>
+
+                            <div class="p-4 rounded-2xl bg-sage-50/60 border border-sage-100 flex items-center justify-between">
+                                <div class="flex items-center gap-3">
+                                    <div class="w-8 h-8 rounded-lg bg-sage-700 text-white flex items-center justify-center font-bold text-sm">
+                                        2
+                                    </div>
+                                    <div>
+                                        <p class="text-xs font-semibold text-charcoal">Tahsin & Bimbingan Makhraj</p>
+                                        <p class="text-[11px] text-charcoal/60">Perbaikan Pengucapan Huruf</p>
+                                    </div>
+                                </div>
+                                <span class="text-xs font-bold text-sage-700">Private / Small Group</span>
+                            </div>
+
+                            <div class="p-4 rounded-2xl bg-sage-50/60 border border-sage-100 flex items-center justify-between">
+                                <div class="flex items-center gap-3">
+                                    <div class="w-8 h-8 rounded-lg bg-sage-700 text-white flex items-center justify-center font-bold text-sm">
+                                        3
+                                    </div>
+                                    <div>
+                                        <p class="text-xs font-semibold text-charcoal">Pendalaman Tajwid Praktis</p>
+                                        <p class="text-[11px] text-charcoal/60">Hukum Bacaan & Sertifikasi</p>
+                                    </div>
+                                </div>
+                                <span class="text-xs font-bold text-sage-700">Mastery Level</span>
+                            </div>
+                        </div>
+
+                        <!-- Live Stats Footer -->
+                        <div class="pt-4 border-t border-gray-100 grid grid-cols-2 gap-4 text-center">
+                            <div class="p-3 rounded-xl bg-cream">
+                                <p class="text-xl font-extrabold text-sage-700">2,500+</p>
+                                <p class="text-[11px] text-charcoal/70 font-medium">Santri & Peserta</p>
+                            </div>
+                            <div class="p-3 rounded-xl bg-cream">
+                                <p class="text-xl font-extrabold text-gold-dark">4.9 / 5.0</p>
+                                <p class="text-[11px] text-charcoal/70 font-medium">Kepuasan Peserta</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Decorative Floating Badge -->
+                    <div class="absolute -bottom-6 -left-6 bg-sage-700 text-white p-4 rounded-2xl shadow-xl hidden sm:flex items-center gap-3 border border-gold/30">
+                        <div class="p-2 bg-gold/20 rounded-xl text-gold">
+                            <i data-lucide="award" class="w-6 h-6"></i>
+                        </div>
+                        <div>
+                            <p class="text-xs font-bold text-gold">Sanad & Sertifikasi</p>
+                            <p class="text-[11px] text-white/80">Kurikulum Standar Internasional</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Core Learning Programs Section -->
+    <section id="programs" class="py-20 bg-white relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto space-y-4 mb-16">
+                <span class="px-3.5 py-1.5 rounded-full bg-mint text-sage-700 font-bold text-xs uppercase tracking-wider">Program Unggulan</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-sage-700">Pilih Jalur Pembelajaran Anda</h2>
+                <p class="text-base text-charcoal/70">Kurikulum dirancang bertahap agar mudah dipahami, dari tingkat dasar hingga mahir.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                
+                <!-- Program Card 1: Arabic Language -->
+                <div class="bg-cream rounded-2xl p-6 border border-sage-100 card-hover-lift flex flex-col justify-between relative group">
+                    <div class="space-y-4">
+                        <div class="w-12 h-12 rounded-xl bg-sage-700 text-gold flex items-center justify-center shadow-md group-hover:scale-110 transition-transform">
+                            <i data-lucide="languages" class="w-6 h-6"></i>
+                        </div>
+                        <span class="inline-block px-2.5 py-0.5 rounded-md bg-gold/15 text-gold-dark text-xs font-bold">Pemula - Mahir</span>
+                        <h3 class="text-xl font-bold text-sage-700">Bahasa Arab</h3>
+                        <p class="text-xs text-charcoal/80 leading-relaxed">
+                            Mempelajari tata bahasa (Nahwu), perubahan kata (Shorof), serta percakapan praktis sehari-hari.
+                        </p>
+                        <ul class="space-y-2 text-xs text-charcoal/70 pt-2">
+                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-sage-700"></i>Paham Al-Qur'an secara langsung</li>
+                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-sage-700"></i>Latihan Percakapan Aktif</li>
+                        </ul>
+                    </div>
+                    <div class="pt-6 mt-6 border-t border-sage-200/50">
+                        <button onclick="openProgramDetail('arabic')" class="w-full py-2.5 px-4 rounded-xl bg-white text-sage-700 border border-sage-200 hover:border-sage-700 font-semibold text-xs transition-colors flex items-center justify-center gap-1.5">
+                            <span>Detail Program</span>
+                            <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Program Card 2: Al-Qur'an Studies -->
+                <div class="bg-cream rounded-2xl p-6 border border-sage-100 card-hover-lift flex flex-col justify-between relative group">
+                    <div class="space-y-4">
+                        <div class="w-12 h-12 rounded-xl bg-sage-700 text-gold flex items-center justify-center shadow-md group-hover:scale-110 transition-transform">
+                            <i data-lucide="book-marked" class="w-6 h-6"></i>
+                        </div>
+                        <span class="inline-block px-2.5 py-0.5 rounded-md bg-gold/15 text-gold-dark text-xs font-bold">Semua Tingkat</span>
+                        <h3 class="text-xl font-bold text-sage-700">Studi Al-Qur'an</h3>
+                        <p class="text-xs text-charcoal/80 leading-relaxed">
+                            Pendalaman bacaan, pemahaman makna ayat (Tadabbur), serta pengamalan petunjuk Al-Qur'an dalam kehidupan.
+                        </p>
+                        <ul class="space-y-2 text-xs text-charcoal/70 pt-2">
+                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-sage-700"></i>Analisis Makna Kosakata Ayat</li>
+                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-sage-700"></i>Pendidikan Karakter Qur'ani</li>
+                        </ul>
+                    </div>
+                    <div class="pt-6 mt-6 border-t border-sage-200/50">
+                        <button onclick="openProgramDetail('quran')" class="w-full py-2.5 px-4 rounded-xl bg-white text-sage-700 border border-sage-200 hover:border-sage-700 font-semibold text-xs transition-colors flex items-center justify-center gap-1.5">
+                            <span>Detail Program</span>
+                            <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Program Card 3: Tahsin Class -->
+                <div class="bg-cream rounded-2xl p-6 border border-sage-100 card-hover-lift flex flex-col justify-between relative group">
+                    <div class="space-y-4">
+                        <div class="w-12 h-12 rounded-xl bg-sage-700 text-gold flex items-center justify-center shadow-md group-hover:scale-110 transition-transform">
+                            <i data-lucide="mic" class="w-6 h-6"></i>
+                        </div>
+                        <span class="inline-block px-2.5 py-0.5 rounded-md bg-gold/15 text-gold-dark text-xs font-bold">Intensif Makhraj</span>
+                        <h3 class="text-xl font-bold text-sage-700">Kelas Tahsin</h3>
+                        <p class="text-xs text-charcoal/80 leading-relaxed">
+                            Fokus pada perbaikan artikulasi pengucapan huruf (Makharijul Huruf) dan kelancaran membaca Al-Qur'an.
+                        </p>
+                        <ul class="space-y-2 text-xs text-charcoal/70 pt-2">
+                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-sage-700"></i>Feedback 1-on-1 dari Ustaz</li>
+                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-sage-700"></i>Koreksi Pelafalan Presisi</li>
+                        </ul>
+                    </div>
+                    <div class="pt-6 mt-6 border-t border-sage-200/50">
+                        <button onclick="openProgramDetail('tahsin')" class="w-full py-2.5 px-4 rounded-xl bg-white text-sage-700 border border-sage-200 hover:border-sage-700 font-semibold text-xs transition-colors flex items-center justify-center gap-1.5">
+                            <span>Detail Program</span>
+                            <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Program Card 4: Tajwid Mastery -->
+                <div class="bg-cream rounded-2xl p-6 border border-sage-100 card-hover-lift flex flex-col justify-between relative group">
+                    <div class="space-y-4">
+                        <div class="w-12 h-12 rounded-xl bg-sage-700 text-gold flex items-center justify-center shadow-md group-hover:scale-110 transition-transform">
+                            <i data-lucide="sparkles" class="w-6 h-6"></i>
+                        </div>
+                        <span class="inline-block px-2.5 py-0.5 rounded-md bg-gold/15 text-gold-dark text-xs font-bold">Mastery & Hukum</span>
+                        <h3 class="text-xl font-bold text-sage-700">Tajwid Mastery</h3>
+                        <p class="text-xs text-charcoal/80 leading-relaxed">
+                            Mempelajari hukum-hukum bacaan, panjang-pendek (Mad), waqaf, dan kaidah tartil sesuai riwayat standar.
+                        </p>
+                        <ul class="space-y-2 text-xs text-charcoal/70 pt-2">
+                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-sage-700"></i>Buku Panduan Lengkap</li>
+                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-sage-700"></i>Sertifikat Kelulusan Tajwid</li>
+                        </ul>
+                    </div>
+                    <div class="pt-6 mt-6 border-t border-sage-200/50">
+                        <button onclick="openProgramDetail('tajwid')" class="w-full py-2.5 px-4 rounded-xl bg-white text-sage-700 border border-sage-200 hover:border-sage-700 font-semibold text-xs transition-colors flex items-center justify-center gap-1.5">
+                            <span>Detail Program</span>
+                            <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- The Learning Process (How It Works) -->
+    <section id="how-it-works" class="py-20 islamic-pattern-bg text-white relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto space-y-4 mb-16">
+                <span class="px-3.5 py-1.5 rounded-full bg-gold/20 text-gold font-bold text-xs uppercase tracking-wider">Tahapan Belajar</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-white">4 Langkah Mudah Memulai Belajar</h2>
+                <p class="text-base text-cream/80">Proses pendaftaran hingga pembimbingan dirancang sistematis agar Anda merasa nyaman.</p>
+            </div>
+
+            <!-- Steps Grid / Timeline -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 relative">
+                
+                <!-- Step 1 -->
+                <div class="bg-sage-800/80 p-6 rounded-2xl border border-sage-500/30 relative flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="w-10 h-10 rounded-xl bg-gold text-sage-900 font-extrabold flex items-center justify-center text-lg shadow-md">01</span>
+                            <i data-lucide="mouse-pointer-click" class="w-6 h-6 text-gold/60"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-white mb-2">Pilih Program</h3>
+                        <p class="text-xs text-cream/70 leading-relaxed">
+                            Tentukan program yang sesuai dengan tujuan Anda (Bahasa Arab, Tahsin, Tajwid, atau Al-Qur'an).
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="bg-sage-800/80 p-6 rounded-2xl border border-sage-500/30 relative flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="w-10 h-10 rounded-xl bg-gold text-sage-900 font-extrabold flex items-center justify-center text-lg shadow-md">02</span>
+                            <i data-lucide="clipboard-check" class="w-6 h-6 text-gold/60"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-white mb-2">Placement Test</h3>
+                        <p class="text-xs text-cream/70 leading-relaxed">
+                            Evaluasi singkat gratis untuk menentukan tingkat pemahaman dan penempatan kelompok kelas yang tepat.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="bg-sage-800/80 p-6 rounded-2xl border border-sage-500/30 relative flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="w-10 h-10 rounded-xl bg-gold text-sage-900 font-extrabold flex items-center justify-center text-lg shadow-md">03</span>
+                            <i data-lucide="video" class="w-6 h-6 text-gold/60"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-white mb-2">Sesi Live Interaktif</h3>
+                        <p class="text-xs text-cream/70 leading-relaxed">
+                            Mengikuti sesi tatap muka online dalam kelompok kecil atau privat bersama pengajar berpengalaman.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Step 4 -->
+                <div class="bg-sage-800/80 p-6 rounded-2xl border border-sage-500/30 relative flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="w-10 h-10 rounded-xl bg-gold text-sage-900 font-extrabold flex items-center justify-center text-lg shadow-md">04</span>
+                            <i data-lucide="award" class="w-6 h-6 text-gold/60"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-white mb-2">Evaluasi & Sertifikat</h3>
+                        <p class="text-xs text-cream/70 leading-relaxed">
+                            Mendapatkan umpan balik berkala, ujian kelulusan level, serta sertifikat resmi pencapaian.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Registration & Class Selection Section -->
+    <section id="schedule" class="py-20 bg-cream">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-white rounded-3xl p-6 sm:p-10 shadow-soft-sage border border-sage-100">
+                <div class="text-center max-w-xl mx-auto space-y-3 mb-8">
+                    <span class="px-3.5 py-1.5 rounded-full bg-mint text-sage-700 font-bold text-xs uppercase tracking-wider">Formulir Pendaftaran</span>
+                    <h2 class="text-2xl sm:text-3xl font-extrabold text-sage-700">Mulai Perjalanan Belajar Anda</h2>
+                    <p class="text-xs sm:text-sm text-charcoal/70">Pilih format belajar yang paling sesuai dengan kebutuhan dan jadwal harian Anda.</p>
+                </div>
+
+                <!-- Class Format Selector Tabs -->
+                <div class="grid grid-cols-3 gap-2 p-1.5 bg-cream rounded-xl mb-8 border border-sage-100" id="format-tabs">
+                    <button type="button" onclick="selectFormatTab('group')" id="tab-group" class="py-2.5 text-xs sm:text-sm font-bold rounded-lg transition-all text-white bg-sage-700 shadow-sm">
+                        Small Group (3-5 Peserta)
+                    </button>
+                    <button type="button" onclick="selectFormatTab('private')" id="tab-private" class="py-2.5 text-xs sm:text-sm font-bold rounded-lg transition-all text-charcoal hover:text-sage-700">
+                        Private 1-on-1
+                    </button>
+                    <button type="button" onclick="selectFormatTab('self')" id="tab-self" class="py-2.5 text-xs sm:text-sm font-bold rounded-lg transition-all text-charcoal hover:text-sage-700">
+                        Self-Paced / Mandiri
+                    </button>
+                </div>
+
+                <!-- Registration Form -->
+                <form id="registration-form" onsubmit="handleRegistrationSubmit(event)" class="space-y-5">
+                    <input type="hidden" id="selected-format" value="Small Group (3-5 Peserta)">
+                    
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                        <!-- Full Name -->
+                        <div>
+                            <label class="block text-xs font-bold text-charcoal mb-2" for="reg-name">Nama Lengkap *</label>
+                            <input type="text" id="reg-name" required placeholder="Contoh: Ahmad Fauzi" class="w-full px-4 py-3 rounded-xl border border-sage-200 focus:outline-none focus:border-sage-700 focus:ring-1 focus:ring-sage-700 text-sm text-charcoal placeholder-gray-400">
+                        </div>
+
+                        <!-- Email Address -->
+                        <div>
+                            <label class="block text-xs font-bold text-charcoal mb-2" for="reg-email">Alamat Email *</label>
+                            <input type="email" id="reg-email" required placeholder="nama@email.com" class="w-full px-4 py-3 rounded-xl border border-sage-200 focus:outline-none focus:border-sage-700 focus:ring-1 focus:ring-sage-700 text-sm text-charcoal placeholder-gray-400">
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                        <!-- WhatsApp Number -->
+                        <div>
+                            <label class="block text-xs font-bold text-charcoal mb-2" for="reg-phone">Nomor WhatsApp *</label>
+                            <input type="tel" id="reg-phone" required placeholder="081234567890" class="w-full px-4 py-3 rounded-xl border border-sage-200 focus:outline-none focus:border-sage-700 focus:ring-1 focus:ring-sage-700 text-sm text-charcoal placeholder-gray-400">
+                        </div>
+
+                        <!-- Selected Program Dropdown -->
+                        <div>
+                            <label class="block text-xs font-bold text-charcoal mb-2" for="reg-program">Pilihan Program *</label>
+                            <select id="reg-program" required class="w-full px-4 py-3 rounded-xl border border-sage-200 focus:outline-none focus:border-sage-700 focus:ring-1 focus:ring-sage-700 text-sm text-charcoal bg-white">
+                                <option value="">-- Pilih Program Studi --</option>
+                                <option value="Bahasa Arab">Bahasa Arab (Nahwu, Shorof, Hiwar)</option>
+                                <option value="Studi Al-Qur'an">Studi Al-Qur'an & Tadabbur</option>
+                                <option value="Kelas Tahsin">Kelas Tahsin & Makhraj</option>
+                                <option value="Tajwid Mastery">Tajwid Mastery & Hukum</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Level Selection -->
+                    <div>
+                        <label class="block text-xs font-bold text-charcoal mb-2" for="reg-level">Tingkat Kemampuan Saat Ini *</label>
+                        <select id="reg-level" required class="w-full px-4 py-3 rounded-xl border border-sage-200 focus:outline-none focus:border-sage-700 focus:ring-1 focus:ring-sage-700 text-sm text-charcoal bg-white">
+                            <option value="Beginner">Pemula (Belum bisa/masih terbata-bata)</option>
+                            <option value="Intermediate">Menengah (Bisa membaca, ingin memperbaiki tajwid)</option>
+                            <option value="Advanced">Mahir (Ingin mendalami tata bahasa/pemahaman tingkat lanjut)</option>
+                        </select>
+                    </div>
+
+                    <!-- Submit Button -->
+                    <div class="pt-4">
+                        <button type="submit" class="w-full py-4 bg-sage-700 hover:bg-sage-800 text-white font-bold rounded-xl shadow-lg hover:shadow-xl transition-all flex items-center justify-center gap-2">
+                            <span>Kirim Pendaftaran & Konsultasi</span>
+                            <i data-lucide="send" class="w-4 h-4"></i>
+                        </button>
+                        <p class="text-[11px] text-center text-charcoal/60 mt-3">
+                            🔒 Data Anda aman. Tim admin kami akan menghubungi Anda melalui WhatsApp untuk konfirmasi jadwal.
+                        </p>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Frequently Asked Questions (FAQ) Accordion UI -->
+    <section id="faq" class="py-20 bg-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto space-y-3 mb-12">
+                <span class="px-3.5 py-1.5 rounded-full bg-mint text-sage-700 font-bold text-xs uppercase tracking-wider">FAQ</span>
+                <h2 class="text-3xl font-extrabold text-sage-700">Pertanyaan Sering Diajukan</h2>
+                <p class="text-sm text-charcoal/70">Temukan jawaban cepat atas pertanyaan Anda seputar program belajar kami.</p>
+            </div>
+
+            <div class="space-y-4" id="faq-accordion">
+                
+                <!-- FAQ Item 1 -->
+                <div class="border border-sage-100 rounded-2xl bg-cream overflow-hidden">
+                    <button onclick="toggleFaq(this)" class="w-full px-6 py-5 text-left font-bold text-sage-700 flex justify-between items-center gap-4 hover:bg-sage-50/50 transition-colors">
+                        <span class="text-sm sm:text-base">Apakah program ini cocok untuk pemula yang belum pernah belajar Bahasa Arab?</span>
+                        <i data-lucide="chevron-down" class="w-5 h-5 text-sage-700 transform transition-transform duration-200"></i>
+                    </button>
+                    <div class="hidden px-6 pb-5 pt-1 text-xs sm:text-sm text-charcoal/80 leading-relaxed border-t border-sage-100/50">
+                        Ya, sangat cocok! Kurikulum kami dirancang secara bertahap dari dasar (*mubtadi'*). Bagi pemula, pembelajaran akan difokuskan pada pengenalan huruf, makhraj, dan kosakata dasar secara santai dan terstruktur.
+                    </div>
+                </div>
+
+                <!-- FAQ Item 2 -->
+                <div class="border border-sage-100 rounded-2xl bg-cream overflow-hidden">
+                    <button onclick="toggleFaq(this)" class="w-full px-6 py-5 text-left font-bold text-sage-700 flex justify-between items-center gap-4 hover:bg-sage-50/50 transition-colors">
+                        <span class="text-sm sm:text-base">Bagaimana metode pelaksanaan sesi pembelajaran online?</span>
+                        <i data-lucide="chevron-down" class="w-5 h-5 text-sage-700 transform transition-transform duration-200"></i>
+                    </button>
+                    <div class="hidden px-6 pb-5 pt-1 text-xs sm:text-sm text-charcoal/80 leading-relaxed border-t border-sage-100/50">
+                        Sesi dilaksanakan secara live melalui aplikasi Zoom / Google Meet interaktif. Peserta dapat berinteraksi langsung, bertanya, dan mendapatkan praktek pelafalan serta umpan balik dari ustaz/ustazah pengajar.
+                    </div>
+                </div>
+
+                <!-- FAQ Item 3 -->
+                <div class="border border-sage-100 rounded-2xl bg-cream overflow-hidden">
+                    <button onclick="toggleFaq(this)" class="w-full px-6 py-5 text-left font-bold text-sage-700 flex justify-between items-center gap-4 hover:bg-sage-50/50 transition-colors">
+                        <span class="text-sm sm:text-base">Apakah saya bisa memilih jadwal belajar yang fleksibel?</span>
+                        <i data-lucide="chevron-down" class="w-5 h-5 text-sage-700 transform transition-transform duration-200"></i>
+                    </button>
+                    <div class="hidden px-6 pb-5 pt-1 text-xs sm:text-sm text-charcoal/80 leading-relaxed border-t border-sage-100/50">
+                        Tentu saja. Untuk paket **Private 1-on-1**, jadwal belajar dapat disesuaikan sepenuhnya antara peserta dan pengajar. Untuk kelas **Small Group**, tersedia berbagai pilihan slot jadwal di pagi, sore, maupun malam hari.
+                    </div>
+                </div>
+
+                <!-- FAQ Item 4 -->
+                <div class="border border-sage-100 rounded-2xl bg-cream overflow-hidden">
+                    <button onclick="toggleFaq(this)" class="w-full px-6 py-5 text-left font-bold text-sage-700 flex justify-between items-center gap-4 hover:bg-sage-50/50 transition-colors">
+                        <span class="text-sm sm:text-base">Apakah peserta mendapatkan sertifikat setelah menyelesaikan program?</span>
+                        <i data-lucide="chevron-down" class="w-5 h-5 text-sage-700 transform transition-transform duration-200"></i>
+                    </button>
+                    <div class="hidden px-6 pb-5 pt-1 text-xs sm:text-sm text-charcoal/80 leading-relaxed border-t border-sage-100/50">
+                        Ya. Peserta yang menyelesaikan seluruh pertemuan dan lulus ujian evaluasi akhir level akan menerima Sertifikat Kelulusan Resmi dari Life with Quran and Arabic Language.
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Direct Contact & Support Section -->
+    <section id="contact" class="py-20 bg-cream border-t border-sage-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+                
+                <!-- Contact Info Cards -->
+                <div class="lg:col-span-5 space-y-6">
+                    <div>
+                        <span class="px-3.5 py-1.5 rounded-full bg-mint text-sage-700 font-bold text-xs uppercase tracking-wider">Hubungi Kami</span>
+                        <h2 class="text-3xl font-extrabold text-sage-700 mt-2">Ada Pertanyaan? Kami Siap Membantu</h2>
+                        <p class="text-xs sm:text-sm text-charcoal/70 mt-2">Jangan ragu untuk berkonsultasi dengan tim layanan santri kami.</p>
+                    </div>
+
+                    <!-- WhatsApp Card -->
+                    <a href="https://wa.me/6281234567890" target="_blank" class="p-5 rounded-2xl bg-white border border-sage-100 shadow-sm hover:shadow-md transition-all flex items-center gap-4 group">
+                        <div class="w-12 h-12 rounded-xl bg-emerald-50 text-emerald-600 flex items-center justify-center font-bold group-hover:scale-105 transition-transform">
+                            <i data-lucide="message-square" class="w-6 h-6"></i>
+                        </div>
+                        <div>
+                            <p class="text-xs font-bold text-charcoal/60">WhatsApp Concierge</p>
+                            <p class="text-sm font-bold text-sage-700">+62 812-3456-7890</p>
+                            <p class="text-[11px] text-emerald-600 font-medium">Respon cepat (08.00 - 20.00 WIB)</p>
+                        </div>
+                    </a>
+
+                    <!-- Email Card -->
+                    <div class="p-5 rounded-2xl bg-white border border-sage-100 shadow-sm flex items-center gap-4">
+                        <div class="w-12 h-12 rounded-xl bg-sage-50 text-sage-700 flex items-center justify-center font-bold">
+                            <i data-lucide="mail" class="w-6 h-6"></i>
+                        </div>
+                        <div>
+                            <p class="text-xs font-bold text-charcoal/60">Email Support</p>
+                            <p class="text-sm font-bold text-sage-700">salam@lifewithquran.id</p>
+                            <p class="text-[11px] text-charcoal/60">Untuk kerjasama & informasi umum</p>
+                        </div>
+                    </div>
+
+                    <!-- Center Location Card -->
+                    <div class="p-5 rounded-2xl bg-white border border-sage-100 shadow-sm flex items-center gap-4">
+                        <div class="w-12 h-12 rounded-xl bg-gold/15 text-gold-dark flex items-center justify-center font-bold">
+                            <i data-lucide="map-pin" class="w-6 h-6"></i>
+                        </div>
+                        <div>
+                            <p class="text-xs font-bold text-charcoal/60">Pusat Belajar & Kantor</p>
+                            <p class="text-sm font-bold text-sage-700">Jakarta & Bekasi, Indonesia</p>
+                            <p class="text-[11px] text-charcoal/60">Layanan Kelas Online & Offline</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Direct Inquiry Form -->
+                <div class="lg:col-span-7 bg-white p-8 rounded-3xl border border-sage-100 shadow-soft-sage">
+                    <h3 class="text-xl font-bold text-sage-700 mb-6">Kirim Pesan Langsung</h3>
+                    <form id="inquiry-form" onsubmit="handleInquirySubmit(event)" class="space-y-4">
+                        <div>
+                            <label class="block text-xs font-bold text-charcoal mb-1.5" for="inq-name">Nama Lengkap</label>
+                            <input type="text" id="inq-name" required placeholder="Nama Anda" class="w-full px-4 py-3 rounded-xl border border-sage-200 focus:outline-none focus:border-sage-700 text-sm">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold text-charcoal mb-1.5" for="inq-email">Alamat Email</label>
+                            <input type="email" id="inq-email" required placeholder="email@domain.com" class="w-full px-4 py-3 rounded-xl border border-sage-200 focus:outline-none focus:border-sage-700 text-sm">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold text-charcoal mb-1.5" for="inq-message">Pesan / Pertanyaan</label>
+                            <textarea id="inq-message" required rows="4" placeholder="Tuliskan pertanyaan atau rencana belajar Anda di sini..." class="w-full px-4 py-3 rounded-xl border border-sage-200 focus:outline-none focus:border-sage-700 text-sm"></textarea>
+                        </div>
+                        <button type="submit" class="w-full py-3.5 bg-sage-700 hover:bg-sage-800 text-white font-bold rounded-xl shadow-md transition-all flex items-center justify-center gap-2">
+                            <span>Kirim Pertanyaan</span>
+                            <i data-lucide="send" class="w-4 h-4"></i>
+                        </button>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="bg-sage-900 text-white pt-16 pb-12 border-t border-sage-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 pb-12 border-b border-sage-800">
+                
+                <!-- Brand Column -->
+                <div class="lg:col-span-2 space-y-4">
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-xl bg-gold text-sage-900 flex items-center justify-center font-bold">
+                            <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+                            </svg>
+                        </div>
+                        <span class="font-bold text-lg text-white">Life with Quran & Arabic</span>
+                    </div>
+                    <p class="text-xs text-cream/70 leading-relaxed max-w-sm">
+                        Platform pendidikan Islam terstruktur yang menghubungkan santri dengan pengajar berkualitas untuk mendalami Bahasa Arab dan Al-Qur'an secara mendalam.
+                    </p>
+                </div>
+
+                <!-- Navigation Quick Links -->
+                <div>
+                    <h4 class="text-sm font-bold text-gold mb-4">Program Belajar</h4>
+                    <ul class="space-y-2.5 text-xs text-cream/80">
+                        <li><a href="#programs" class="hover:text-gold transition-colors">Bahasa Arab Nahwu & Shorof</a></li>
+                        <li><a href="#programs" class="hover:text-gold transition-colors">Studi Al-Qur'an & Tadabbur</a></li>
+                        <li><a href="#programs" class="hover:text-gold transition-colors">Kelas Tahsin Makhraj</a></li>
+                        <li><a href="#programs" class="hover:text-gold transition-colors">Tajwid Mastery</a></li>
+                    </ul>
+                </div>
+
+                <!-- Format & Info -->
+                <div>
+                    <h4 class="text-sm font-bold text-gold mb-4">Format Kelas</h4>
+                    <ul class="space-y-2.5 text-xs text-cream/80">
+                        <li><a href="#schedule" class="hover:text-gold transition-colors">Small Group Class</a></li>
+                        <li><a href="#schedule" class="hover:text-gold transition-colors">Private 1-on-1 Mentoring</a></li>
+                        <li><a href="#schedule" class="hover:text-gold transition-colors">Self-Paced Learning</a></li>
+                        <li><a href="#faq" class="hover:text-gold transition-colors">Sertifikasi & Sanad</a></li>
+                    </ul>
+                </div>
+
+                <!-- Legal / Policies -->
+                <div>
+                    <h4 class="text-sm font-bold text-gold mb-4">Informasi</h4>
+                    <ul class="space-y-2.5 text-xs text-cream/80">
+                        <li><a href="#" class="hover:text-gold transition-colors">Tentang Kami</a></li>
+                        <li><a href="#" class="hover:text-gold transition-colors">Syarat & Ketentuan</a></li>
+                        <li><a href="#" class="hover:text-gold transition-colors">Kebijakan Privasi</a></li>
+                        <li><a href="#contact" class="hover:text-gold transition-colors">Bantuan Support</a></li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <!-- Footer Bottom -->
+            <div class="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-cream/60 gap-4">
+                <p>&copy; 2026 Life with Quran and Arabic Language. All rights reserved.</p>
+                <div class="flex items-center space-x-4">
+                    <a href="#" class="p-2 rounded-lg bg-sage-800 text-cream hover:text-gold transition-colors"><i data-lucide="instagram" class="w-4 h-4"></i></a>
+                    <a href="#" class="p-2 rounded-lg bg-sage-800 text-cream hover:text-gold transition-colors"><i data-lucide="youtube" class="w-4 h-4"></i></a>
+                    <a href="#" class="p-2 rounded-lg bg-sage-800 text-cream hover:text-gold transition-colors"><i data-lucide="facebook" class="w-4 h-4"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Program Detail Modal -->
+    <div id="program-modal" class="fixed inset-0 z-50 hidden items-center justify-center p-4">
+        <!-- Backdrop -->
+        <div onclick="closeProgramModal()" class="absolute inset-0 bg-sage-900/60 backdrop-blur-sm modal-backdrop"></div>
+        
+        <!-- Content Box -->
+        <div class="relative bg-white rounded-3xl max-w-xl w-full p-6 sm:p-8 shadow-2xl modal-content border border-sage-100 z-10">
+            <button onclick="closeProgramModal()" class="absolute top-5 right-5 p-2 text-charcoal/50 hover:text-sage-700 rounded-lg">
+                <i data-lucide="x" class="w-5 h-5"></i>
+            </button>
+
+            <div id="modal-body-content" class="space-y-4">
+                <!-- Dynamic Content Will Be Injected Here -->
+            </div>
+
+            <div class="pt-6 mt-6 border-t border-gray-100 flex items-center gap-3">
+                <button onclick="closeProgramModal(); openRegistrationModal();" class="flex-1 py-3 bg-sage-700 hover:bg-sage-800 text-white font-bold text-xs sm:text-sm rounded-xl shadow-md text-center">
+                    Daftar Program Ini
+                </button>
+                <button onclick="closeProgramModal()" class="py-3 px-5 bg-cream hover:bg-gray-200 text-charcoal font-bold text-xs sm:text-sm rounded-xl">
+                    Tutup
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Registration Quick Modal -->
+    <div id="registration-modal" class="fixed inset-0 z-50 hidden items-center justify-center p-4">
+        <!-- Backdrop -->
+        <div onclick="closeRegistrationModal()" class="absolute inset-0 bg-sage-900/60 backdrop-blur-sm modal-backdrop"></div>
+        
+        <!-- Content Box -->
+        <div class="relative bg-white rounded-3xl max-w-lg w-full p-6 sm:p-8 shadow-2xl modal-content border border-sage-100 z-10 max-h-[90vh] overflow-y-auto">
+            <button onclick="closeRegistrationModal()" class="absolute top-5 right-5 p-2 text-charcoal/50 hover:text-sage-700 rounded-lg">
+                <i data-lucide="x" class="w-5 h-5"></i>
+            </button>
+
+            <div class="text-center mb-6">
+                <div class="w-12 h-12 bg-mint rounded-2xl flex items-center justify-center text-sage-700 mx-auto mb-3">
+                    <i data-lucide="sparkles" class="w-6 h-6"></i>
+                </div>
+                <h3 class="text-xl font-bold text-sage-700">Pendaftaran Kelas Praktis</h3>
+                <p class="text-xs text-charcoal/70 mt-1">Isi formulir singkat untuk berkonsultasi dengan pembimbing.</p>
+            </div>
+
+            <form onsubmit="handleQuickRegistration(event)" class="space-y-4">
+                <div>
+                    <label class="block text-xs font-bold text-charcoal mb-1" for="quick-name">Nama Lengkap *</label>
+                    <input type="text" id="quick-name" required placeholder="Ahmad Fauzi" class="w-full px-4 py-2.5 rounded-xl border border-sage-200 text-sm focus:outline-none focus:border-sage-700">
+                </div>
+                <div>
+                    <label class="block text-xs font-bold text-charcoal mb-1" for="quick-phone">Nomor WhatsApp *</label>
+                    <input type="tel" id="quick-phone" required placeholder="081234567890" class="w-full px-4 py-2.5 rounded-xl border border-sage-200 text-sm focus:outline-none focus:border-sage-700">
+                </div>
+                <div>
+                    <label class="block text-xs font-bold text-charcoal mb-1" for="quick-program">Program Pilihan *</label>
+                    <select id="quick-program" required class="w-full px-4 py-2.5 rounded-xl border border-sage-200 text-sm focus:outline-none focus:border-sage-700 bg-white">
+                        <option value="Bahasa Arab">Bahasa Arab</option>
+                        <option value="Studi Al-Qur'an">Studi Al-Qur'an</option>
+                        <option value="Kelas Tahsin">Kelas Tahsin</option>
+                        <option value="Tajwid Mastery">Tajwid Mastery</option>
+                    </select>
+                </div>
+                <button type="submit" class="w-full py-3.5 bg-sage-700 hover:bg-sage-800 text-white font-bold rounded-xl shadow-md text-sm mt-2">
+                    Lanjutkan ke WhatsApp Concierge
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Success Toast Notification -->
+    <div id="success-toast" class="fixed bottom-6 right-6 z-50 transform translate-y-24 opacity-0 transition-all duration-300 max-w-md w-full bg-sage-700 text-white p-4 rounded-2xl shadow-2xl border border-gold/30 flex items-center justify-between">
+        <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-xl bg-gold text-sage-900 flex items-center justify-center font-bold">
+                <i data-lucide="check-circle" class="w-6 h-6"></i>
+            </div>
+            <div>
+                <p class="text-sm font-bold text-white" id="toast-title">Pendaftaran Terkirim!</p>
+                <p class="text-xs text-cream/80" id="toast-desc">Tim kami akan mengontak Anda via WhatsApp.</p>
+            </div>
+        </div>
+        <button onclick="closeToast()" class="p-1 text-cream/60 hover:text-white">
+            <i data-lucide="x" class="w-4 h-4"></i>
+        </button>
+    </div>
+
+    <!-- Interactive JavaScript -->
+    <script>
+        // Initialize Lucide Icons
+        document.addEventListener('DOMContentLoaded', () => {
+            lucide.createIcons();
+        });
+
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuBtn.addEventListener('click', toggleMobileMenu);
+
+        function toggleMobileMenu() {
+            mobileMenu.classList.toggle('hidden');
+        }
+
+        // Format Selector Tabs inside Registration Section
+        function selectFormatTab(format) {
+            const tabs = ['group', 'private', 'self'];
+            const labels = {
+                'group': 'Small Group (3-5 Peserta)',
+                'private': 'Private 1-on-1 Mentoring',
+                'self': 'Self-Paced / Mandiri'
+            };
+
+            tabs.forEach(t => {
+                const btn = document.getElementById(`tab-${t}`);
+                if (t === format) {
+                    btn.className = 'py-2.5 text-xs sm:text-sm font-bold rounded-lg transition-all text-white bg-sage-700 shadow-sm';
+                } else {
+                    btn.className = 'py-2.5 text-xs sm:text-sm font-bold rounded-lg transition-all text-charcoal hover:text-sage-700';
+                }
+            });
+
+            document.getElementById('selected-format').value = labels[format];
+        }
+
+        // FAQ Accordion Toggle
+        function toggleFaq(buttonElement) {
+            const content = buttonElement.nextElementSibling;
+            const icon = buttonElement.querySelector('i');
+            
+            const isHidden = content.classList.contains('hidden');
+            
+            // Close all other FAQ contents optional for clean single accordion
+            document.querySelectorAll('#faq-accordion > div > div').forEach(el => el.classList.add('hidden'));
+            document.querySelectorAll('#faq-accordion i').forEach(el => el.classList.remove('rotate-180'));
+
+            if (isHidden) {
+                content.classList.remove('hidden');
+                if (icon) icon.classList.add('rotate-180');
+            }
+        }
+
+        // Program Detail Modal Logic
+        const programModal = document.getElementById('program-modal');
+        const modalBody = document.getElementById('modal-body-content');
+
+        const programData = {
+            'arabic': {
+                title: 'Program Bahasa Arab',
+                badge: 'Nahwu, Shorof & Hiwar',
+                desc: "Program intensif mendalami struktur kata dan tata bahasa Arab standar Al-Qur'an.",
+                curriculum: [
+                    "Pengenalan Kosakata Al-Qur'an Tematik",
+                    'Kaidah Dasar Nahwu (Struktur Kalimat)',
+                    'Shorof (Perubahan Bentuk Kata)',
+                    'Latihan Percakapan (Hiwar) & Terjemah Mandiri'
+                ]
+            },
+            'quran': {
+                title: "Studi Al-Qur'an & Tadabbur",
+                badge: 'Pemahaman Verses',
+                desc: "Menggali keindahan makna Al-Qur'an dan menerapkan hukum-hukumnya dalam kehidupan sehari-hari.",
+                curriculum: [
+                    "Tadabbur Surat-Surat Pilihan",
+                    "Kosa Kata Kunci Al-Qur'an",
+                    'Konteks Asbabun Nuzul',
+                    "Penerapan Karakter & Akhlaq Qur'ani"
+                ]
+            },
+            'tahsin': {
+                title: 'Kelas Tahsin Makhraj',
+                badge: 'Bimbingan 1-on-1',
+                desc: "Perbaikan bacaan Al-Qur'an agar sesuai dengan pengucapan Makharijul Huruf dan Sifatul Huruf.",
+                curriculum: [
+                    'Diagnosa Kesalahan Pelafalan',
+                    'Praktek Makhraj Huruf Hijaiyah',
+                    'Latihan Kelancaran Sifat Huruf',
+                    'Setoran Bacaan Per-Juz Dengan Pembimbing'
+                ]
+            },
+            'tajwid': {
+                title: 'Tajwid Mastery',
+                badge: 'Sertifikat & Hukum',
+                desc: 'Mempelajari seluruh hukum bacaan Tajwid secara teoritis dan praktis.',
+                curriculum: [
+                    'Hukum Nun Sukin & Tanwin',
+                    'Hukum Mim Sukun & Mad (Panjang-Pendek)',
+                    "Aturan Waqaf & Ibtida'",
+                    'Ujian Kelulusan & Sertifikat Tajwid'
+                ]
+            }
+        };
+
+        function openProgramDetail(programKey) {
+            const data = programData[programKey];
+            if (!data) return;
+
+            modalBody.innerHTML = `
+                <span class="px-3 py-1 bg-gold/15 text-gold-dark font-bold text-xs rounded-full inline-block mb-2">${data.badge}</span>
+                <h3 class="text-2xl font-bold text-sage-700">${data.title}</h3>
+                <p class="text-xs sm:text-sm text-charcoal/80 leading-relaxed">${data.desc}</p>
+                <div class="pt-3">
+                    <p class="text-xs font-bold text-sage-700 uppercase tracking-wider mb-2">Materi Utama Kurikulum:</p>
+                    <ul class="space-y-2">
+                        ${data.curriculum.map(item => `
+                            <li class="flex items-center gap-2 text-xs text-charcoal/80">
+                                <i data-lucide="check-circle-2" class="w-4 h-4 text-gold-dark shrink-0"></i>
+                                <span>${item}</span>
+                            </li>
+                        `).join('')}
+                    </ul>
+                </div>
+            `;
+            
+            programModal.classList.remove('hidden');
+            programModal.classList.add('flex');
+            lucide.createIcons();
+        }
+
+        function closeProgramModal() {
+            programModal.classList.add('hidden');
+            programModal.classList.remove('flex');
+        }
+
+        // Quick Registration Modal Logic
+        const registrationModal = document.getElementById('registration-modal');
+
+        function openRegistrationModal() {
+            registrationModal.classList.remove('hidden');
+            registrationModal.classList.add('flex');
+        }
+
+        function closeRegistrationModal() {
+            registrationModal.classList.add('hidden');
+            registrationModal.classList.remove('flex');
+        }
+
+        // Handle Main Form Submission
+        function handleRegistrationSubmit(event) {
+            event.preventDefault();
+            const name = document.getElementById('reg-name').value;
+            const program = document.getElementById('reg-program').value;
+            const format = document.getElementById('selected-format').value;
+
+            showToast(`Alhamdulillah, ${name}!`, `Pendaftaran kelas ${program} (${format}) berhasil dikirim.`);
+            event.target.reset();
+        }
+
+        // Handle Quick Form Submission
+        function handleQuickRegistration(event) {
+            event.preventDefault();
+            const name = document.getElementById('quick-name').value;
+            const program = document.getElementById('quick-program').value;
+            
+            closeRegistrationModal();
+            showToast(`Terima Kasih, ${name}!`, `Pendaftaran ${program} diterima. Menghubungkan ke WhatsApp...`);
+            
+            setTimeout(() => {
+                window.open(`https://wa.me/6281234567890?text=Assalamu'alaikum,%20Saya%20${encodeURIComponent(name)}%20ingin%20mendaftar%20program%20${encodeURIComponent(program)}.`, '_blank');
+            }, 1000);
+        }
+
+        // Handle Quick Inquiry Form Submission
+        function handleInquirySubmit(event) {
+            event.preventDefault();
+            const name = document.getElementById('inq-name').value;
+            showToast(`Terima Kasih, ${name}`, `Pesan Anda telah berhasil kami terima.`);
+            event.target.reset();
+        }
+
+        // Toast Feedback System
+        function showToast(title, description) {
+            const toast = document.getElementById('success-toast');
+            document.getElementById('toast-title').innerText = title;
+            document.getElementById('toast-desc').innerText = description;
+
+            toast.classList.remove('translate-y-24', 'opacity-0');
+            toast.classList.add('translate-y-0', 'opacity-100');
+
+            setTimeout(() => {
+                closeToast();
+            }, 5000);
+        }
+
+        function closeToast() {
+            const toast = document.getElementById('success-toast');
+            toast.classList.add('translate-y-24', 'opacity-0');
+            toast.classList.remove('translate-y-0', 'opacity-100');
+        }
+    </script>
+</body>
+</html>
